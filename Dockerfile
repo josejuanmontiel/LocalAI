@@ -1,6 +1,6 @@
 ARG BASE_IMAGE=ubuntu:22.04
 ARG GRPC_BASE_IMAGE=${BASE_IMAGE}
-ARG INTEL_BASE_IMAGE=openvinotoolkit/model_server:latest
+ARG INTEL_BASE_IMAGE=openvino/model_server:latest-gpu
 
 FROM ${BASE_IMAGE} AS requirements
 
