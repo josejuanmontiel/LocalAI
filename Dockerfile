@@ -332,6 +332,12 @@ COPY ./entrypoint.sh .
 # Copy the binary
 COPY --from=builder /build/local-ai ./
 
+# Copy Intel OneAPI libs
+COPY --from=intel /usr/lib /usr/lib
+COPY --from=intel /usr/include /usr/include
+COPY --from=intel /etc/apt/sources.list.d/intel-graphics.list /etc/apt/sources.list.d/intel-graphics.list
+COPY --from=intel /usr/share/keyrings/intel-graphics.gpg /usr/share/keyrings/intel-graphics.gpg
+
 # Make sure the models directory exists
 RUN mkdir -p /models /backends
 
