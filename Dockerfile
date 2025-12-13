@@ -165,7 +165,6 @@ RUN <<EOT bash
         apt-get update && \
         apt-get install -y \
         intel-opencl-icd intel-level-zero-gpu level-zero \
-        libigc1 libigdfcl1 \
         intel-media-va-driver-non-free libmfx1 libvpl2 \
         libegl-mesa0 libegl1-mesa libgl1-mesa-dri libglapi-mesa libgbm1 \
         libgl1-mesa-glx libglx-mesa0 \
