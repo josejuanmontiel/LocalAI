@@ -169,7 +169,7 @@ RUN <<EOT bash
         intel-oneapi-mkl-sycl-blas \
         intel-oneapi-mkl \
         intel-oneapi-dnnl \
-        unified-memory-framework \
+        intel-oneapi-umf \
         openvino-libraries-2024.4.0 \
         && \
         apt-get clean && \
