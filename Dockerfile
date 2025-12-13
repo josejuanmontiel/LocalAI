@@ -185,17 +185,6 @@ RUN <<EOT bash
         make install && \
         cd ../.. && \
         rm -rf level-zero && \
-        intel-media-va-driver-non-free libmfx1 libvpl2 \
-        libegl-mesa0 libegl1-mesa libgl1-mesa-dri libglapi-mesa libgbm1 \
-        libgl1-mesa-glx libglx-mesa0 \
-        intel-oneapi-compiler-dpcpp-cpp-runtime \
-        intel-oneapi-runtime-dpcpp-sycl-core \
-        intel-oneapi-mkl-sycl-blas \
-        intel-oneapi-mkl \
-        intel-oneapi-dnnl \
-        intel-oneapi-umf \
-        openvino-libraries-2024.4.0 \
-        && \
         apt-get clean && \
         rm -rf /var/lib/apt/lists/*
     fi
