@@ -246,6 +246,7 @@ RUN apt-get update && \
     libgl1 libglx-mesa0 \
     intel-oneapi-compiler-dpcpp-cpp-runtime \
     intel-oneapi-runtime-dpcpp-sycl-core \
+    intel-oneapi-mkl-sycl-blas \
     intel-oneapi-mkl \
     && \
     apt-get clean && \
