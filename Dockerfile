@@ -210,8 +210,14 @@ USER root
 RUN apt-get update && apt-get install -y --no-install-recommends wget gpg ca-certificates && rm -rf /var/lib/apt/lists/*
 RUN wget -qO - https://repositories.intel.com/gpu/intel-graphics.key | \
     gpg --yes --dearmor --output /usr/share/keyrings/intel-graphics.gpg
-RUN echo "deb [arch=amd64 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/gpu/ubuntu jammy/lts/2350 unified" > /etc/apt/sources.list.d/intel-graphics.list
+RUN echo "deb [arch=amd64 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/gpu/ubuntu noble/lts/2350 unified" > /etc/apt/sources.list.d/intel-graphics.list
 RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    intel-opencl-icd intel-level-zero-gpu level-zero \
+    intel-media-va-driver-non-free libmfx1 libmfxgen1 libvpl2 \
+    libegl-mesa0 libegl1-mesa libgl1-mesa-dri libglapi-mesa libgbm1 \
+    libgl1-mesa-glx libglx-mesa0 \
+    && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -331,6 +337,12 @@ COPY ./entrypoint.sh .
 
 # Copy the binary
 COPY --from=builder /build/local-ai ./
+
+# Copy Intel OneAPI libs
+COPY --from=intel /usr/lib /usr/lib
+COPY --from=intel /usr/include /usr/include
+COPY --from=intel /etc/apt/sources.list.d/intel-graphics.list /etc/apt/sources.list.d/intel-graphics.list
+COPY --from=intel /usr/share/keyrings/intel-graphics.gpg /usr/share/keyrings/intel-graphics.gpg
 
 # Make sure the models directory exists
 RUN mkdir -p /models /backends
