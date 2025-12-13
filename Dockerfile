@@ -220,7 +220,8 @@ RUN apt-get update && \
     intel-media-va-driver-non-free libmfx1 libvpl2 \
     libegl-mesa0 libegl1 libgl1-mesa-dri libglapi-mesa libgbm1 \
     libgl1 libglx-mesa0 \
-    intel-oneapi-runtime-libs \
+    intel-oneapi-compiler-dpcpp-cpp-runtime \
+    intel-oneapi-mkl \
     && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
