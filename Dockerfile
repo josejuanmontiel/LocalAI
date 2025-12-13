@@ -215,7 +215,7 @@ RUN wget -qO - https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-P
 RUN echo "deb [arch=amd64 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/gpu/ubuntu noble/lts/2350 unified" > /etc/apt/sources.list.d/intel-graphics.list
 RUN echo "deb [signed-by=/usr/share/keyrings/oneapi-archive-keyring.gpg] https://apt.repos.intel.com/oneapi all main" > /etc/apt/sources.list.d/oneAPI.list
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+    apt-get install -y \
     intel-opencl-icd libze-intel-gpu1 level-zero \
     intel-media-va-driver-non-free libmfx1 libvpl2 \
     libegl-mesa0 libegl1 libgl1-mesa-dri libglapi-mesa libgbm1 \
