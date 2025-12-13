@@ -163,6 +163,7 @@ RUN <<EOT bash
         echo "deb https://apt.repos.intel.com/openvino/2024 ubuntu22 main" | tee /etc/apt/sources.list.d/intel-openvino-2024.list
         
         apt-get update && \
+        apt-get install -y libigc1 && \
         apt-get install -y \
         intel-opencl-icd intel-level-zero-gpu level-zero \
         intel-media-va-driver-non-free libmfx1 libvpl2 \
