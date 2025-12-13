@@ -124,7 +124,11 @@ func (ml *ModelLoader) startProcess(grpcProcess, id string, serverAddress string
 		ml.wd.AddAddressModelMap(serverAddress, id)
 	}
 
+	log.Debug().Msgf("Command: %s %v", grpcProcess, args)
+	log.Debug().Msgf("Environment: %v", os.Environ())
+
 	if err := grpcControlProcess.Run(); err != nil {
+		log.Error().Err(err).Msgf("Failed to run process: %s", grpcProcess)
 		return grpcControlProcess, err
 	}
 
