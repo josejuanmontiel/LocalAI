@@ -1,15 +1,16 @@
 ARG BASE_IMAGE=ubuntu:22.04
 ARG GRPC_BASE_IMAGE=${BASE_IMAGE}
-ARG INTEL_BASE_IMAGE=${BASE_IMAGE}
+ARG INTEL_BASE_IMAGE=openvinotoolkit/model_server:latest
 
 FROM ${BASE_IMAGE} AS requirements
 
 ENV DEBIAN_FRONTEND=noninteractive
+USER root
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-        ca-certificates curl wget espeak-ng libgomp1 \
-        ffmpeg && \
+    ca-certificates curl wget espeak-ng libgomp1 \
+    ffmpeg && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -103,24 +104,24 @@ EOT
 
 # If we are building with clblas support, we need the libraries for the builds
 RUN if [ "${BUILD_TYPE}" = "clblas" ] && [ "${SKIP_DRIVERS}" = "false" ]; then \
-        apt-get update && \
-        apt-get install -y --no-install-recommends \
-            libclblast-dev && \
-        apt-get clean && \
-        rm -rf /var/lib/apt/lists/* \
+    apt-get update && \
+    apt-get install -y --no-install-recommends \
+    libclblast-dev && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* \
     ; fi
 
 RUN if [ "${BUILD_TYPE}" = "hipblas" ] && [ "${SKIP_DRIVERS}" = "false" ]; then \
-        apt-get update && \
-        apt-get install -y --no-install-recommends \
-            hipblas-dev \
-            rocblas-dev && \
-        apt-get clean && \
-        rm -rf /var/lib/apt/lists/* && \
-        echo "amd" > /run/localai/capability && \
-        # I have no idea why, but the ROCM lib packages don't trigger ldconfig after they install, which results in local-ai and others not being able
-        # to locate the libraries. We run ldconfig ourselves to work around this packaging deficiency
-        ldconfig \
+    apt-get update && \
+    apt-get install -y --no-install-recommends \
+    hipblas-dev \
+    rocblas-dev && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    echo "amd" > /run/localai/capability && \
+    # I have no idea why, but the ROCM lib packages don't trigger ldconfig after they install, which results in local-ai and others not being able
+    # to locate the libraries. We run ldconfig ourselves to work around this packaging deficiency
+    ldconfig \
     ; fi
 
 RUN if [ "${BUILD_TYPE}" = "hipblas" ]; then \
@@ -150,13 +151,13 @@ ARG TARGETVARIANT
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-        build-essential \
-        ccache \
-        ca-certificates espeak-ng \
-        curl libssl-dev \
-        git \
-        git-lfs \
-        unzip upx-ucl python3 python-is-python3 && \
+    build-essential \
+    ccache \
+    ca-certificates espeak-ng \
+    curl libssl-dev \
+    git \
+    git-lfs \
+    unzip upx-ucl python3 python-is-python3 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -205,11 +206,11 @@ WORKDIR /build
 # This is a temporary workaround until Intel fixes their repository
 FROM ${INTEL_BASE_IMAGE} AS intel
 RUN wget -qO - https://repositories.intel.com/gpu/intel-graphics.key | \
-gpg --yes --dearmor --output /usr/share/keyrings/intel-graphics.gpg
+    gpg --yes --dearmor --output /usr/share/keyrings/intel-graphics.gpg
 RUN echo "deb [arch=amd64 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/gpu/ubuntu jammy/lts/2350 unified" > /etc/apt/sources.list.d/intel-graphics.list
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-        intel-oneapi-runtime-libs && \
+    intel-oneapi-runtime-libs && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -302,7 +303,7 @@ COPY .devcontainer-scripts /.devcontainer-scripts
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-        ssh less
+    ssh less
 # For the devcontainer, leave apt functional in case additional devtools are needed at runtime.
 
 RUN go install github.com/go-delve/delve/cmd/dlv@latest
@@ -335,7 +336,7 @@ RUN mkdir -p /models /backends
 
 # Define the health check command
 HEALTHCHECK --interval=1m --timeout=10m --retries=10 \
-  CMD curl -f ${HEALTHCHECK_ENDPOINT} || exit 1
+    CMD curl -f ${HEALTHCHECK_ENDPOINT} || exit 1
 
 VOLUME /models /backends /configuration
 EXPOSE 8080
