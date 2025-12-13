@@ -5,38 +5,7 @@ ARG INTEL_BASE_IMAGE=ubuntu:22.04
 # ... (omitted lines)
 
 # Intel requirements
-RUN <<EOT bash
-    if [ "${BUILD_TYPE}" = "intel" ]; then
-        apt-get update && apt-get install -y --no-install-recommends wget gpg ca-certificates curl gnupg
-        
-        # Install Intel OneAPI Repo
-        wget -qO - https://repositories.intel.com/gpu/intel-graphics.key | gpg --yes --dearmor --output /usr/share/keyrings/intel-graphics.gpg
-        wget -qO - https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB | gpg --yes --dearmor --output /usr/share/keyrings/oneapi-archive-keyring.gpg
-        echo "deb [arch=amd64 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/gpu/ubuntu jammy/lts/2350 unified" > /etc/apt/sources.list.d/intel-graphics.list
-        echo "deb [signed-by=/usr/share/keyrings/oneapi-archive-keyring.gpg] https://apt.repos.intel.com/oneapi all main" > /etc/apt/sources.list.d/oneAPI.list
-        
-        # Install OpenVINO Repo (since we are not using the base image anymore)
-        wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
-        apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
-        echo "deb https://apt.repos.intel.com/openvino/2024 ubuntu22 main" | tee /etc/apt/sources.list.d/intel-openvino-2024.list
-        
-        apt-get update && \
-        apt-get install -y \
-        intel-opencl-icd libze-intel-gpu1 level-zero \
-        intel-media-va-driver-non-free libmfx1 libvpl2 \
-        libegl-mesa0 libegl1 libgl1-mesa-dri libglapi-mesa libgbm1 \
-        libgl1 libglx-mesa0 \
-        intel-oneapi-compiler-dpcpp-cpp-runtime \
-        intel-oneapi-runtime-dpcpp-sycl-core \
-        intel-oneapi-mkl-sycl-blas \
-        intel-oneapi-mkl \
-        intel-oneapi-dnnl \
-        openvino-libraries-2024.4.0 \
-        && \
-        apt-get clean && \
-        rm -rf /var/lib/apt/lists/*
-    fi
-EOT
+
 
 FROM ${BASE_IMAGE} AS requirements
 
@@ -172,6 +141,40 @@ ENV PATH=/usr/local/cuda/bin:${PATH}
 
 # HipBLAS requirements
 ENV PATH=/opt/rocm/bin:${PATH}
+
+# Intel requirements
+RUN <<EOT bash
+    if [ "${BUILD_TYPE}" = "intel" ]; then
+        apt-get update && apt-get install -y --no-install-recommends wget gpg ca-certificates curl gnupg
+        
+        # Install Intel OneAPI Repo
+        wget -qO - https://repositories.intel.com/gpu/intel-graphics.key | gpg --yes --dearmor --output /usr/share/keyrings/intel-graphics.gpg
+        wget -qO - https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB | gpg --yes --dearmor --output /usr/share/keyrings/oneapi-archive-keyring.gpg
+        echo "deb [arch=amd64 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/gpu/ubuntu jammy/lts/2350 unified" > /etc/apt/sources.list.d/intel-graphics.list
+        echo "deb [signed-by=/usr/share/keyrings/oneapi-archive-keyring.gpg] https://apt.repos.intel.com/oneapi all main" > /etc/apt/sources.list.d/oneAPI.list
+        
+        # Install OpenVINO Repo (since we are not using the base image anymore)
+        wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+        apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+        echo "deb https://apt.repos.intel.com/openvino/2024 ubuntu22 main" | tee /etc/apt/sources.list.d/intel-openvino-2024.list
+        
+        apt-get update && \
+        apt-get install -y \
+        intel-opencl-icd libze-intel-gpu1 level-zero \
+        intel-media-va-driver-non-free libmfx1 libvpl2 \
+        libegl-mesa0 libegl1 libgl1-mesa-dri libglapi-mesa libgbm1 \
+        libgl1 libglx-mesa0 \
+        intel-oneapi-compiler-dpcpp-cpp-runtime \
+        intel-oneapi-runtime-dpcpp-sycl-core \
+        intel-oneapi-mkl-sycl-blas \
+        intel-oneapi-mkl \
+        intel-oneapi-dnnl \
+        openvino-libraries-2024.4.0 \
+        && \
+        apt-get clean && \
+        rm -rf /var/lib/apt/lists/*
+    fi
+EOT
 
 # Intel requirements
 RUN <<EOT bash
