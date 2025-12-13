@@ -1,0 +1,284 @@
+4:05PM INF HTTP request method=GET path=/static/assets/space-grotesk-regular.ttf status=200
+4:05PM INF HTTP request method=GET path=/static/logo_horizontal.png status=200
+4:05PM DBG context local model name not found, setting to the first model first model name=microsoft_phi-4-mini-reasoning
+4:05PM DBG guessDefaultsFromFile: NGPULayers set NGPULayers=99999999
+4:05PM DBG guessDefaultsFromFile: template already set name=microsoft_phi-4-mini-reasoning
+4:05PM DBG Chat endpoint configuration read: &{modelConfigFile:/models/microsoft_phi-4-mini-reasoning.yaml PredictionOptions:{BasicModelRequest:{Model:microsoft_Phi-4-mini-reasoning-Q4_K_M.gguf} Language: Translate:false N:0 TopP:0xc0001a8c80 TopK:0xc0001a8c88 Temperature:0xc0001a8c90 Maxtokens:0xc0001a8cc0 Echo:false Batch:0 IgnoreEOS:false RepeatPenalty:0 RepeatLastN:0 Keep:0 FrequencyPenalty:0 PresencePenalty:0 TFZ:0xc0001a8cb8 TypicalP:0xc0001a8cb0 Seed:0xc0001a8cd0 Logprobs:{Enabled:false} TopLogprobs:<nil> LogitBias:map[] NegativePrompt: RopeFreqBase:0 RopeFreqScale:0 NegativePromptScale:0 ClipSkip:0 Tokenizer:} Name:microsoft_phi-4-mini-reasoning F16:0xc0001a8c08 Threads:0xc0001a8c60 Debug:0xc000d3ab40 Roles:map[] Embeddings:0xc0001a8cc9 Backend:llama-cpp TemplateConfig:{Chat:{{.Input}}
+<|im_start|>assistant<|im_sep|>
+ ChatMessage:<|im_start|>{{ .RoleName }}<|im_sep|>
+{{.Content}}<|im_end|>
+ Completion:{{.Input}}
+ Edit: Functions: UseTokenizerTemplate:false JoinChatMessagesByCharacter:<nil> Multimodal: ReplyPrefix:} KnownUsecaseStrings:[FLAG_CHAT FLAG_COMPLETION] KnownUsecases:0xc002830a58 Pipeline:{TTS: LLM: Transcription: VAD:} PromptStrings:[] InputStrings:[] InputToken:[] functionCallString: functionCallNameString: ResponseFormat: ResponseFormatMap:map[] FunctionsConfig:{DisableNoAction:false GrammarConfig:{ParallelCalls:false DisableParallelNewLines:false MixedMode:false NoMixedFreeString:false NoGrammar:false Prefix: ExpectStringsAfterJSON:false PropOrder: SchemaType: GrammarTriggers:[]} NoActionFunctionName: NoActionDescriptionName: ResponseRegex:[] JSONRegexMatch:[] ArgumentRegex:[] ArgumentRegexKey: ArgumentRegexValue: ReplaceFunctionResults:[] ReplaceLLMResult:[] CaptureLLMResult:[] FunctionNameKey: FunctionArgumentsKey:} FeatureFlag:map[] LLMConfig:{SystemPrompt: TensorSplit: MainGPU: RMSNormEps:0 NGQA:0 PromptCachePath: PromptCacheAll:false PromptCacheRO:false MirostatETA:0xc0001a8ca8 MirostatTAU:0xc0001a8ca0 Mirostat:0xc0001a8c98 NGPULayers:0xc002522688 MMap:0xc0001a8c09 MMlock:0xc0001a8cc9 LowVRAM:0xc0001a8cc9 Reranking:0xc0001a8cc9 Grammar: StopWords:[<|end|> <|endoftext|> <|im_end|>] Cutstrings:[] ExtractRegex:[] TrimSpace:[] TrimSuffix:[] ContextSize:0xc0001a8648 NUMA:false LoraAdapter: LoraBase: LoraAdapters:[] LoraScales:[] LoraScale:0 NoMulMatQ:false DraftModel: NDraft:0 Quantization: LoadFormat: GPUMemoryUtilization:0 TrustRemoteCode:false EnforceEager:false SwapSpace:0 MaxModelLen:0 TensorParallelSize:0 DisableLogStatus:false DType: LimitMMPerPrompt:{LimitImagePerPrompt:0 LimitVideoPerPrompt:0 LimitAudioPerPrompt:0} MMProj: FlashAttention:<nil> NoKVOffloading:false CacheTypeK: CacheTypeV: RopeScaling: ModelType: YarnExtFactor:0 YarnAttnFactor:0 YarnBetaFast:0 YarnBetaSlow:0 CFGScale:0} Diffusers:{CUDA:false PipelineType: SchedulerType: EnableParameters: IMG2IMG:false ClipSkip:0 ClipModel: ClipSubFolder: ControlNet:} Step:0 GRPC:{Attempts:0 AttemptsSleepTime:0} TTSConfig:{Voice: AudioPath:} CUDA:false DownloadFiles:[] Description: Usage: Options:[] Overrides:[] MCP:{Servers: Stdio:} Agent:{MaxAttempts:0 MaxIterations:0 EnableReasoning:false EnablePlanning:false EnableMCPPrompts:false EnablePlanReEvaluator:false}}
+4:05PM DBG Parameters: &{modelConfigFile:/models/microsoft_phi-4-mini-reasoning.yaml PredictionOptions:{BasicModelRequest:{Model:microsoft_Phi-4-mini-reasoning-Q4_K_M.gguf} Language: Translate:false N:0 TopP:0xc0001a8c80 TopK:0xc0001a8c88 Temperature:0xc0001a8c90 Maxtokens:0xc0001a8cc0 Echo:false Batch:0 IgnoreEOS:false RepeatPenalty:0 RepeatLastN:0 Keep:0 FrequencyPenalty:0 PresencePenalty:0 TFZ:0xc0001a8cb8 TypicalP:0xc0001a8cb0 Seed:0xc0001a8cd0 Logprobs:{Enabled:false} TopLogprobs:<nil> LogitBias:map[] NegativePrompt: RopeFreqBase:0 RopeFreqScale:0 NegativePromptScale:0 ClipSkip:0 Tokenizer:} Name:microsoft_phi-4-mini-reasoning F16:0xc0001a8c08 Threads:0xc0001a8c60 Debug:0xc000d3ab40 Roles:map[] Embeddings:0xc0001a8cc9 Backend:llama-cpp TemplateConfig:{Chat:{{.Input}}
+<|im_start|>assistant<|im_sep|>
+ ChatMessage:<|im_start|>{{ .RoleName }}<|im_sep|>
+{{.Content}}<|im_end|>
+ Completion:{{.Input}}
+ Edit: Functions: UseTokenizerTemplate:false JoinChatMessagesByCharacter:<nil> Multimodal: ReplyPrefix:} KnownUsecaseStrings:[FLAG_CHAT FLAG_COMPLETION] KnownUsecases:0xc002830a58 Pipeline:{TTS: LLM: Transcription: VAD:} PromptStrings:[] InputStrings:[] InputToken:[] functionCallString: functionCallNameString: ResponseFormat: ResponseFormatMap:map[] FunctionsConfig:{DisableNoAction:false GrammarConfig:{ParallelCalls:false DisableParallelNewLines:false MixedMode:false NoMixedFreeString:false NoGrammar:false Prefix: ExpectStringsAfterJSON:false PropOrder: SchemaType: GrammarTriggers:[]} NoActionFunctionName: NoActionDescriptionName: ResponseRegex:[] JSONRegexMatch:[] ArgumentRegex:[] ArgumentRegexKey: ArgumentRegexValue: ReplaceFunctionResults:[] ReplaceLLMResult:[] CaptureLLMResult:[] FunctionNameKey: FunctionArgumentsKey:} FeatureFlag:map[] LLMConfig:{SystemPrompt: TensorSplit: MainGPU: RMSNormEps:0 NGQA:0 PromptCachePath: PromptCacheAll:false PromptCacheRO:false MirostatETA:0xc0001a8ca8 MirostatTAU:0xc0001a8ca0 Mirostat:0xc0001a8c98 NGPULayers:0xc002522688 MMap:0xc0001a8c09 MMlock:0xc0001a8cc9 LowVRAM:0xc0001a8cc9 Reranking:0xc0001a8cc9 Grammar: StopWords:[<|end|> <|endoftext|> <|im_end|>] Cutstrings:[] ExtractRegex:[] TrimSpace:[] TrimSuffix:[] ContextSize:0xc0001a8648 NUMA:false LoraAdapter: LoraBase: LoraAdapters:[] LoraScales:[] LoraScale:0 NoMulMatQ:false DraftModel: NDraft:0 Quantization: LoadFormat: GPUMemoryUtilization:0 TrustRemoteCode:false EnforceEager:false SwapSpace:0 MaxModelLen:0 TensorParallelSize:0 DisableLogStatus:false DType: LimitMMPerPrompt:{LimitImagePerPrompt:0 LimitVideoPerPrompt:0 LimitAudioPerPrompt:0} MMProj: FlashAttention:<nil> NoKVOffloading:false CacheTypeK: CacheTypeV: RopeScaling: ModelType: YarnExtFactor:0 YarnAttnFactor:0 YarnBetaFast:0 YarnBetaSlow:0 CFGScale:0} Diffusers:{CUDA:false PipelineType: SchedulerType: EnableParameters: IMG2IMG:false ClipSkip:0 ClipModel: ClipSubFolder: ControlNet:} Step:0 GRPC:{Attempts:0 AttemptsSleepTime:0} TTSConfig:{Voice: AudioPath:} CUDA:false DownloadFiles:[] Description: Usage: Options:[] Overrides:[] MCP:{Servers: Stdio:} Agent:{MaxAttempts:0 MaxIterations:0 EnableReasoning:false EnablePlanning:false EnableMCPPrompts:false EnablePlanReEvaluator:false}}
+4:05PM DBG templated message for chat: <|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+4:05PM DBG templated message for chat: <|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: backend not found: llama-cpp<|im_end|>
+
+4:05PM DBG templated message for chat: <|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+4:05PM DBG templated message for chat: <|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+4:05PM DBG templated message for chat: <|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+4:05PM DBG templated message for chat: <|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+4:05PM DBG templated message for chat: <|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+4:05PM DBG templated message for chat: <|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+4:05PM DBG templated message for chat: <|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+4:05PM DBG templated message for chat: <|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+4:05PM DBG templated message for chat: <|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+4:05PM DBG templated message for chat: <|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+4:05PM DBG templated message for chat: <|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+4:05PM DBG templated message for chat: <|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+4:05PM DBG templated message for chat: <|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+4:05PM DBG templated message for chat: <|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+4:05PM DBG templated message for chat: <|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+4:05PM DBG Prompt (before templating): <|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: backend not found: llama-cpp<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+4:05PM DBG Template found, input modified to: <|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: backend not found: llama-cpp<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+
+4:05PM DBG Prompt (after templating): <|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: backend not found: llama-cpp<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+Internal error: failed to load model with internal loader: grpc service not ready<|im_end|>
+
+<|im_start|>user<|im_sep|>
+hola<|im_end|>
+
+<|im_start|>assistant<|im_sep|>
+
+4:05PM DBG Stream request received
+4:05PM INF BackendLoader starting backend=llama-cpp modelID=microsoft_phi-4-mini-reasoning o.model=microsoft_Phi-4-mini-reasoning-Q4_K_M.gguf
+4:05PM DBG Loading model in memory from file: /models/microsoft_Phi-4-mini-reasoning-Q4_K_M.gguf
+4:05PM DBG Loading Model microsoft_phi-4-mini-reasoning with gRPC (file: /models/microsoft_Phi-4-mini-reasoning-Q4_K_M.gguf) (backend: llama-cpp): {backendString:llama-cpp model:microsoft_Phi-4-mini-reasoning-Q4_K_M.gguf modelID:microsoft_phi-4-mini-reasoning context:{emptyCtx:{}} gRPCOptions:0xc0002caf08 externalBackends:map[] grpcAttempts:20 grpcAttemptsDelay:2 parallelRequests:false}
+4:05PM DBG Loading external backend: /backends/intel-sycl-f16-llama-cpp/run.sh
+4:05PM DBG external backend is file: &{name:run.sh size:1480 mode:493 modTime:{wall:0 ext:63899793957 loc:0x4e100c0} sys:{Dev:66306 Ino:17865217 Nlink:1 Mode:33261 Uid:0 Gid:0 X__pad0:0 Rdev:0 Size:1480 Blksize:4096 Blocks:8 Atim:{Sec:1764197157 Nsec:0} Mtim:{Sec:1764197157 Nsec:0} Ctim:{Sec:1765641926 Nsec:107400836} X__unused:[0 0 0]}}
+4:05PM DBG Loading GRPC Process: /backends/intel-sycl-f16-llama-cpp/run.sh
+4:05PM DBG GRPC Service for microsoft_phi-4-mini-reasoning will be running at: '127.0.0.1:43727'
+4:05PM DBG Command: /backends/intel-sycl-f16-llama-cpp/run.sh []
+4:05PM DBG Environment: [NVIDIA_VISIBLE_DEVICES=all HOSTNAME=538a5b77397e NVIDIA_REQUIRE_CUDA=cuda>=12.0 PWD=/ NVIDIA_DRIVER_CAPABILITIES=compute,utility HOME=/root PYTHONPATH=/ovms/lib/python:/ovms/python_deps TERM=xterm SHLVL=0 BUILD_TYPE=intel HEALTHCHECK_ENDPOINT=http://localhost:8080/readyz LD_LIBRARY_PATH=/ovms/lib:/usr/lib/x86_64-linux-gnu:/usr/lib:/opt/intel/oneapi/lib:/opt/intel/oneapi/lib/intel64 PATH=/opt/rocm/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/ovms/bin DEBUG=true DEBIAN_FRONTEND=noninteractive OLDPWD=/ HF_HOME=//models TRANSFORMERS_CACHE=//models HUGGINGFACE_HUB_CACHE=//models]
+4:05PM DBG Sending chunk: {"created":1765641932,"object":"chat.completion.chunk","id":"1132e9c6-6300-453e-a23e-d523070bed2e","model":"microsoft_phi-4-mini-reasoning","choices":[{"index":0,"finish_reason":null,"delta":{"role":"assistant","content":null}}],"usage":{"prompt_tokens":0,"completion_tokens":0,"total_tokens":0}}
+4:05PM DBG GRPC Service state dir: /tmp/go-processmanager3593714372
+4:05PM DBG GRPC Service Started
+4:05PM DBG Wait for the service to start up
+4:05PM DBG Options: ContextSize:4096 Seed:1370134516 NBatch:512 F16Memory:true MMap:true NGPULayers:99999999 Threads:14 FlashAttention:"auto"
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr +++ realpath run.sh
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr ++ dirname /backends/intel-sycl-f16-llama-cpp/run.sh
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + CURDIR=/backends/intel-sycl-f16-llama-cpp
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + cd /
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + echo 'CPU info:'
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stdout CPU info:
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + grep -e 'model\sname' /proc/cpuinfo
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + head -1
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stdout model name	: Intel(R) Core(TM) Ultra 5 235
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + grep -e flags /proc/cpuinfo
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + head -1
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stdout flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdt_a rdseed adx smap clflushopt clwb intel_pt sha_ni xsaveopt xsavec xgetbv1 xsaves split_lock_detect user_shstk avx_vnni lam wbnoinvd dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req hfi vnmi umip pku ospke waitpkg gfni vaes vpclmulqdq rdpid bus_lock_detect movdiri movdir64b fsrm md_clear serialize arch_lbr ibt flush_l1d arch_capabilities
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + BINARY=llama-cpp-fallback
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + grep -q -e '\savx\s' /proc/cpuinfo
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + echo 'CPU:    AVX    found OK'
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + '[' -e /backends/intel-sycl-f16-llama-cpp/llama-cpp-avx ']'
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stdout CPU:    AVX    found OK
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + BINARY=llama-cpp-avx
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + grep -q -e '\savx2\s' /proc/cpuinfo
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stdout CPU:    AVX2   found OK
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + echo 'CPU:    AVX2   found OK'
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + '[' -e /backends/intel-sycl-f16-llama-cpp/llama-cpp-avx2 ']'
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + BINARY=llama-cpp-avx2
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + grep -q -e '\savx512f\s' /proc/cpuinfo
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + '[' -n '' ']'
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr ++ uname
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + '[' Linux == Darwin ']'
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + export LD_LIBRARY_PATH=/backends/intel-sycl-f16-llama-cpp/lib:/ovms/lib:/usr/lib/x86_64-linux-gnu:/usr/lib:/opt/intel/oneapi/lib:/opt/intel/oneapi/lib/intel64
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + LD_LIBRARY_PATH=/backends/intel-sycl-f16-llama-cpp/lib:/ovms/lib:/usr/lib/x86_64-linux-gnu:/usr/lib:/opt/intel/oneapi/lib:/opt/intel/oneapi/lib/intel64
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + '[' -f /backends/intel-sycl-f16-llama-cpp/lib/ld.so ']'
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + echo 'Using lib/ld.so'
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + echo 'Using binary: llama-cpp-avx2'
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr + exec /backends/intel-sycl-f16-llama-cpp/lib/ld.so /backends/intel-sycl-f16-llama-cpp/llama-cpp-avx2 --addr 127.0.0.1:43727
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stdout Using lib/ld.so
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stdout Using binary: llama-cpp-avx2
+4:05PM DBG GRPC(microsoft_phi-4-mini-reasoning-127.0.0.1:43727): stderr /backends/intel-sycl-f16-llama-cpp/llama-cpp-avx2: error while loading shared libraries: libsycl.so.8: cannot open shared object file: No such file or directory
+4:06PM INF HTTP request method=GET path=/readyz status=200
+4:06PM ERR failed starting/connecting to the gRPC service error="rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing: dial tcp 127.0.0.1:43727: connect: connection refused\""
+4:06PM DBG GRPC Service NOT ready
+4:06PM ERR Failed to load model microsoft_phi-4-mini-reasoning with backend llama-cpp error="failed to load model with internal loader: grpc service not ready" modelID=microsoft_phi-4-mini-reasoning
+4:06PM DBG No choices in the response, skipping
+4:06PM DBG No choices in the response, skipping
+4:06PM ERR Stream ended with error: failed to load model with internal loader: grpc service not ready
+4:06PM INF HTTP request method=POST path=/v1/chat/completions status=200
