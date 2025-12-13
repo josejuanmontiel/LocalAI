@@ -365,7 +365,7 @@ ARG CUDA_MAJOR_VERSION=12
 ENV NVIDIA_DRIVER_CAPABILITIES=compute,utility
 ENV NVIDIA_REQUIRE_CUDA="cuda>=${CUDA_MAJOR_VERSION}.0"
 ENV NVIDIA_VISIBLE_DEVICES=all
-ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu:/usr/lib:/opt/intel/oneapi/lib:/opt/intel/oneapi/lib/intel64
+ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu:/usr/lib:/opt/intel/oneapi/lib:/opt/intel/oneapi/lib/intel64:/opt/intel/oneapi/compiler/latest/lib:/opt/intel/oneapi/redist/lib:/opt/intel/oneapi/dnnl/latest/lib
 
 WORKDIR /
 
@@ -373,12 +373,6 @@ COPY ./entrypoint.sh .
 
 # Copy the binary
 COPY --from=builder /build/local-ai ./
-
-# Copy Intel OneAPI libs
-COPY --from=intel /usr/lib /usr/lib
-COPY --from=intel /usr/include /usr/include
-COPY --from=intel /etc/apt/sources.list.d/intel-graphics.list /etc/apt/sources.list.d/intel-graphics.list
-COPY --from=intel /usr/share/keyrings/intel-graphics.gpg /usr/share/keyrings/intel-graphics.gpg
 
 # Make sure the models directory exists
 RUN mkdir -p /models /backends
