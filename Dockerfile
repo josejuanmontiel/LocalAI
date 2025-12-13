@@ -153,6 +153,7 @@ RUN <<EOT bash
         libgl1 libglx-mesa0 \
         intel-oneapi-compiler-dpcpp-cpp-runtime \
         intel-oneapi-runtime-dpcpp-sycl-core \
+        intel-oneapi-dnnl \
         intel-oneapi-mkl \
         && \
         apt-get clean && \
