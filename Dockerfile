@@ -253,7 +253,7 @@ RUN apt-get update && \
 # ... (omitted lines)
 
 ENV NVIDIA_VISIBLE_DEVICES=all
-ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu:/usr/lib:/opt/intel/oneapi/lib:/opt/intel/oneapi/lib/intel64:/opt/intel/oneapi/compiler/latest/lib:/opt/intel/oneapi/redist/lib
+ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu:/usr/lib:/opt/intel/oneapi/lib:/opt/intel/oneapi/lib/intel64:/opt/intel/oneapi/compiler/latest/lib:/opt/intel/oneapi/redist/lib:/opt/intel/oneapi/dnnl/latest/lib
 
 ###################################
 ###################################
