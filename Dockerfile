@@ -221,10 +221,16 @@ RUN apt-get update && \
     libegl-mesa0 libegl1 libgl1-mesa-dri libglapi-mesa libgbm1 \
     libgl1 libglx-mesa0 \
     intel-oneapi-compiler-dpcpp-cpp-runtime \
+    intel-oneapi-runtime-dpcpp-sycl-core \
     intel-oneapi-mkl \
     && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+# ... (omitted lines)
+
+ENV NVIDIA_VISIBLE_DEVICES=all
+ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu:/usr/lib:/opt/intel/oneapi/lib:/opt/intel/oneapi/lib/intel64:/opt/intel/oneapi/compiler/latest/lib:/opt/intel/oneapi/redist/lib
 
 ###################################
 ###################################
