@@ -147,15 +147,12 @@ RUN <<EOT bash
     if [ "${BUILD_TYPE}" = "intel" ]; then
         apt-get update && apt-get install -y --no-install-recommends wget gpg ca-certificates curl gnupg
         
-        # Install Intel OneAPI Repo
+        # Install Intel OneAPI Repo (Noble/2350 - compatible with Ubuntu 22.04)
         wget -qO - https://repositories.intel.com/gpu/intel-graphics.key | gpg --yes --dearmor --output /usr/share/keyrings/intel-graphics.gpg
         wget -qO - https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB | gpg --yes --dearmor --output /usr/share/keyrings/oneapi-archive-keyring.gpg
-        echo "deb [arch=amd64 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/gpu/ubuntu jammy client unified" > /etc/apt/sources.list.d/intel-graphics.list
+        echo "deb [arch=amd64 signed-by=/usr/share/keyrings/intel-graphics.gpg] https://repositories.intel.com/gpu/ubuntu noble/lts/2350 unified" > /etc/apt/sources.list.d/intel-graphics.list
 
         echo "deb [signed-by=/usr/share/keyrings/oneapi-archive-keyring.gpg] https://apt.repos.intel.com/oneapi all main" > /etc/apt/sources.list.d/oneAPI.list
-        
-        # Pin Intel repository to ensure we get their versions of dependencies
-        echo "Package: *\nPin: origin repositories.intel.com\nPin-Priority: 1000" > /etc/apt/preferences.d/intel-graphics
         
         # Install OpenVINO Repo (since we are not using the base image anymore)
         wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
@@ -165,7 +162,7 @@ RUN <<EOT bash
         apt-get update && \
         apt-get install -y libigc1 git cmake && \
         apt-get install -y \
-        intel-opencl-icd intel-level-zero-gpu \
+        intel-opencl-icd libze-intel-gpu1 libze1 \
         intel-media-va-driver-non-free libmfx1 libvpl2 \
         libegl-mesa0 libegl1-mesa libgl1-mesa-dri libglapi-mesa libgbm1 \
         libgl1-mesa-glx libglx-mesa0 \
